@@ -205,7 +205,7 @@
     text-transform: uppercase;
     padding: 0.4rem 1rem;
     border-radius: 100px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
     animation: pulse-glow 2s ease-in-out infinite;
   }
 
@@ -219,7 +219,7 @@
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 900;
     line-height: 1.1;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .hero h1 .line1 { color: var(--text); }
@@ -231,7 +231,7 @@
 
   .hero p {
     color: var(--muted);
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-family: 'Inter', sans-serif;
     font-weight: 300;
     max-width: 500px;
@@ -246,7 +246,7 @@
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
   }
 
   .section-sub {
@@ -260,7 +260,7 @@
   .games-section {
     position: relative;
     z-index: 1;
-    padding: 2rem;
+    padding: 1.25rem;
     max-width: 1100px;
     margin: 0 auto;
   }
@@ -362,11 +362,12 @@
 
   .game-card.active .active-check { display: flex; }
 
+
   /* ========== ORDER FORM ========== */
   .order-section {
     position: relative;
     z-index: 1;
-    padding: 2rem;
+    padding: 1.25rem;
     max-width: 1100px;
     margin: 0 auto;
     display: none;
@@ -504,7 +505,7 @@
     font-size: 0.85rem;
     font-weight: 600;
     color: var(--muted);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
     letter-spacing: 0.5px;
     text-transform: uppercase;
   }
@@ -654,6 +655,7 @@
   .summary-row.total .val { color: var(--accent); font-size: 1.2rem; }
 
   /* ========== QRIS MODAL ========== */
+
   .modal-overlay {
     position: fixed;
     inset: 0;
@@ -669,11 +671,13 @@
   .modal-overlay.open { display: flex; }
 
   .modal {
+    max-height: 90vh;
+    overflow-y: auto;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 24px;
-    padding: 2rem;
-    max-width: 420px;
+    padding: 1.25rem;
+    max-width: 360px;
     width: 100%;
     text-align: center;
     position: relative;
@@ -686,81 +690,55 @@
   }
 
   .modal-close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+    position: fixed;
+    top: 1.25rem;
+    right: 1.25rem;
+    z-index: 1100;
     background: var(--surface2);
     border: 1px solid var(--border);
-    color: var(--muted);
+    color: #fff;
     border-radius: 50%;
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.2s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
   }
 
-  .modal-close:hover { color: var(--text); border-color: var(--accent); }
+  .modal-close:hover { color: var(--accent); border-color: var(--accent); box-shadow: 0 0 12px rgba(0,212,255,0.3); }
 
   .modal h2 {
     font-family: 'Orbitron', monospace;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 700;
     letter-spacing: 2px;
     color: var(--accent);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
   }
 
   .modal .modal-sub {
     color: var(--muted);
     font-size: 0.9rem;
     font-family: 'Inter', sans-serif;
-    margin-bottom: 1.5rem;
-  }
-
-  /* QRIS Design */
-  .qris-wrapper {
-    background: #fff;
-    border-radius: 16px;
-    padding: 1.5rem;
-    margin: 0 auto 1.5rem;
-    max-width: 260px;
-    position: relative;
-  }
-
-  .qris-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     margin-bottom: 0.75rem;
   }
 
-  .qris-logo {
-    font-family: 'Orbitron', monospace;
-    font-size: 0.8rem;
-    font-weight: 900;
-    color: #e11d48;
-  }
+  /* QRIS Design */
+  
 
-  .qris-tag {
-    background: #e11d48;
-    color: #fff;
-    font-size: 0.6rem;
-    font-weight: 700;
-    padding: 2px 6px;
-    border-radius: 4px;
-    letter-spacing: 1px;
-  }
-
-  /* SVG QR Code */
+  /* image qris */
   .qr-svg {
-    width: 180px;
-    height: 180px;
+    width: 90%;
+    max-height: 250px;
     display: block;
     margin: 0 auto;
+    object-fit: contain;
+    border: 1px solid #eee;
+    border-radius: 12px;
   }
 
   .qris-merchant {
@@ -777,8 +755,8 @@
     background: linear-gradient(135deg, rgba(0,212,255,0.1), rgba(124,58,237,0.1));
     border: 1px solid rgba(0,212,255,0.3);
     border-radius: 12px;
-    padding: 1rem;
-    margin-bottom: 1.5rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.75rem;
   }
 
   .amount-label {
@@ -791,7 +769,7 @@
 
   .amount-value {
     font-family: 'Orbitron', monospace;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 900;
     color: var(--accent);
   }
@@ -817,7 +795,7 @@
     padding: 0.35rem 1rem;
     font-size: 0.85rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   /* ========== CONTACT SECTION ========== */
@@ -841,7 +819,7 @@
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 20px;
-    padding: 2rem;
+    padding: 1.25rem;
     display: flex;
     align-items: center;
     gap: 1.5rem;
@@ -880,7 +858,7 @@
   }
 
   .contact-info .name {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 700;
     color: var(--text);
   }
@@ -904,7 +882,7 @@
     position: relative;
     z-index: 1;
     text-align: center;
-    padding: 2rem;
+    padding: 1.25rem;
     color: var(--muted);
     font-size: 0.85rem;
     font-family: 'Inter', sans-serif;
@@ -993,7 +971,7 @@
   .feedback-header {
     background: linear-gradient(135deg, rgba(0,212,255,0.08), rgba(124,58,237,0.08));
     border-bottom: 1px solid var(--border);
-    padding: 2rem;
+    padding: 1.25rem;
     display: flex;
     align-items: center;
     gap: 1.5rem;
@@ -1033,7 +1011,7 @@
   }
 
   .feedback-body {
-    padding: 2rem;
+    padding: 1.25rem;
   }
 
   .feedback-grid {
@@ -1050,7 +1028,7 @@
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--muted);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
     letter-spacing: 0.5px;
     text-transform: uppercase;
   }
@@ -1152,7 +1130,7 @@
 
   .success-anim {
     font-size: 3.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     animation: popIn 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
   }
 
@@ -1163,9 +1141,9 @@
 
   .feedback-success h3 {
     font-family: 'Orbitron', monospace;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     color: var(--success);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
     letter-spacing: 1px;
   }
 
@@ -1201,7 +1179,7 @@
     background: var(--surface);
     border: 1px solid var(--accent2);
     border-radius: 24px;
-    padding: 2rem;
+    padding: 1.25rem;
     width: 100%;
     max-width: 860px;
     margin: 2rem auto;
@@ -1214,7 +1192,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--border);
   }
@@ -1250,8 +1228,10 @@
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
   }
+
+  .admin-tab img { width: 24px; height: 24px; object-fit: cover; border-radius: 4px; flex-shrink: 0; vertical-align: middle; }
 
   .admin-tab {
     background: var(--surface2);
@@ -1272,7 +1252,7 @@
   .admin-pkg-table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
   }
 
   .admin-pkg-table th {
@@ -1409,7 +1389,7 @@
     padding: 0.6rem 1rem;
     font-size: 0.82rem;
     color: var(--muted);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -1440,9 +1420,9 @@
 
   .admin-login-box h2 {
     font-family: 'Orbitron', monospace;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     color: var(--accent2);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
     letter-spacing: 2px;
   }
 
@@ -1450,7 +1430,7 @@
     color: var(--muted);
     font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
   }
 
   .admin-login-input {
@@ -1461,12 +1441,12 @@
     padding: 0.85rem 1.2rem;
     color: var(--text);
     font-family: 'Rajdhani', sans-serif;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     outline: none;
     transition: all 0.2s;
     text-align: center;
     letter-spacing: 4px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .admin-login-input:focus {
@@ -1497,7 +1477,7 @@
 
   .admin-lock-icon {
     font-size: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     display: block;
   }
 
@@ -1613,6 +1593,26 @@
       <div class="testi-stars">⭐⭐⭐⭐⭐</div>
       <p>"Harganya lebih murah dibanding toko sebelah, prosesnya juga sat-set."</p>
       <div class="testi-user">- Rizky, Player ML</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p>"Eh giluy, murah banget cuy dibanding toko lain. Sumpah dah next gw langganan sini."</p>
+      <div class="testi-user">- Rofiq, Player PUBG</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p>"Seriusan harga nya segini?, murah bgtt guysss."</p>
+      <div class="testi-user">- Windah, Players of all games</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p>"SUMPAHHH ADA WEB TOPUP SEMURAH INI???, LOVE LOVE DEH BUAT OWNER NYAA."</p>
+      <div class="testi-user">- Ara, Player Genshin</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p>"MAKASIH BG, GW HOKI PAS TOPUP DISINI."</p>
+      <div class="testi-user">- Bocil FF, Player Freefire</div>
     </div>
   </div>
 </section>
@@ -1806,92 +1806,18 @@
 
     <div class="qris-wrapper">
       <div class="qris-header">
-        <div class="qris-logo">QRIS</div>
-        <div class="qris-tag">NASIONAL</div>
+        <div class="qris-logo"></div>
+        <div class="qris-tag"></div>
       </div>
+    
       <!-- QR Code SVG -->
-      <svg class="qr-svg" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-        <!-- Border squares -->
-        <rect x="10" y="10" width="50" height="50" rx="4" fill="none" stroke="#000" stroke-width="4"/>
-        <rect x="18" y="18" width="34" height="34" rx="2" fill="#000"/>
-        <rect x="120" y="10" width="50" height="50" rx="4" fill="none" stroke="#000" stroke-width="4"/>
-        <rect x="128" y="18" width="34" height="34" rx="2" fill="#000"/>
-        <rect x="10" y="120" width="50" height="50" rx="4" fill="none" stroke="#000" stroke-width="4"/>
-        <rect x="18" y="128" width="34" height="34" rx="2" fill="#000"/>
-        <!-- Data dots -->
-        <rect x="70" y="10" width="8" height="8" fill="#000"/>
-        <rect x="82" y="10" width="8" height="8" fill="#000"/>
-        <rect x="94" y="10" width="8" height="8" fill="#000"/>
-        <rect x="106" y="10" width="8" height="8" fill="#000"/>
-        <rect x="70" y="22" width="8" height="8" fill="#000"/>
-        <rect x="94" y="22" width="8" height="8" fill="#000"/>
-        <rect x="70" y="34" width="8" height="8" fill="#000"/>
-        <rect x="82" y="34" width="8" height="8" fill="#000"/>
-        <rect x="106" y="34" width="8" height="8" fill="#000"/>
-        <rect x="70" y="46" width="8" height="8" fill="#000"/>
-        <rect x="94" y="46" width="8" height="8" fill="#000"/>
-        <rect x="10" y="70" width="8" height="8" fill="#000"/>
-        <rect x="22" y="70" width="8" height="8" fill="#000"/>
-        <rect x="46" y="70" width="8" height="8" fill="#000"/>
-        <rect x="58" y="70" width="8" height="8" fill="#000"/>
-        <rect x="70" y="70" width="8" height="8" fill="#000"/>
-        <rect x="82" y="70" width="8" height="8" fill="#000"/>
-        <rect x="94" y="70" width="8" height="8" fill="#000"/>
-        <rect x="118" y="70" width="8" height="8" fill="#000"/>
-        <rect x="130" y="70" width="8" height="8" fill="#000"/>
-        <rect x="154" y="70" width="8" height="8" fill="#000"/>
-        <rect x="10" y="82" width="8" height="8" fill="#000"/>
-        <rect x="34" y="82" width="8" height="8" fill="#000"/>
-        <rect x="58" y="82" width="8" height="8" fill="#000"/>
-        <rect x="70" y="82" width="8" height="8" fill="#000"/>
-        <rect x="94" y="82" width="8" height="8" fill="#000"/>
-        <rect x="118" y="82" width="8" height="8" fill="#000"/>
-        <rect x="142" y="82" width="8" height="8" fill="#000"/>
-        <rect x="166" y="82" width="8" height="8" fill="#000"/>
-        <rect x="10" y="94" width="8" height="8" fill="#000"/>
-        <rect x="22" y="94" width="8" height="8" fill="#000"/>
-        <rect x="34" y="94" width="8" height="8" fill="#000"/>
-        <rect x="46" y="94" width="8" height="8" fill="#000"/>
-        <rect x="70" y="94" width="8" height="8" fill="#000"/>
-        <rect x="82" y="94" width="8" height="8" fill="#000"/>
-        <rect x="106" y="94" width="8" height="8" fill="#000"/>
-        <rect x="118" y="94" width="8" height="8" fill="#000"/>
-        <rect x="130" y="94" width="8" height="8" fill="#000"/>
-        <rect x="154" y="94" width="8" height="8" fill="#000"/>
-        <rect x="166" y="94" width="8" height="8" fill="#000"/>
-        <rect x="10" y="106" width="8" height="8" fill="#000"/>
-        <rect x="46" y="106" width="8" height="8" fill="#000"/>
-        <rect x="70" y="106" width="8" height="8" fill="#000"/>
-        <rect x="94" y="106" width="8" height="8" fill="#000"/>
-        <rect x="118" y="106" width="8" height="8" fill="#000"/>
-        <rect x="142" y="106" width="8" height="8" fill="#000"/>
-        <rect x="70" y="118" width="8" height="8" fill="#000"/>
-        <rect x="82" y="118" width="8" height="8" fill="#000"/>
-        <rect x="106" y="118" width="8" height="8" fill="#000"/>
-        <rect x="130" y="118" width="8" height="8" fill="#000"/>
-        <rect x="154" y="118" width="8" height="8" fill="#000"/>
-        <rect x="70" y="130" width="8" height="8" fill="#000"/>
-        <rect x="94" y="130" width="8" height="8" fill="#000"/>
-        <rect x="106" y="130" width="8" height="8" fill="#000"/>
-        <rect x="118" y="130" width="8" height="8" fill="#000"/>
-        <rect x="142" y="130" width="8" height="8" fill="#000"/>
-        <rect x="166" y="130" width="8" height="8" fill="#000"/>
-        <rect x="70" y="142" width="8" height="8" fill="#000"/>
-        <rect x="82" y="142" width="8" height="8" fill="#000"/>
-        <rect x="106" y="142" width="8" height="8" fill="#000"/>
-        <rect x="130" y="142" width="8" height="8" fill="#000"/>
-        <rect x="154" y="142" width="8" height="8" fill="#000"/>
-        <rect x="70" y="154" width="8" height="8" fill="#000"/>
-        <rect x="94" y="154" width="8" height="8" fill="#000"/>
-        <rect x="118" y="154" width="8" height="8" fill="#000"/>
-        <rect x="142" y="154" width="8" height="8" fill="#000"/>
-        <rect x="166" y="154" width="8" height="8" fill="#000"/>
-        <rect x="70" y="166" width="8" height="8" fill="#000"/>
-        <rect x="82" y="166" width="8" height="8" fill="#000"/>
-        <rect x="106" y="166" width="8" height="8" fill="#000"/>
-        <!-- Center logo hint -->
+      <div class="payment-section">
+    <h3>Pembayaran QRIS</h3>
+    <img src="images/QRIS.jpeg" alt="Scan QRIS di sini" style="width: 100%; max-width: 200px; border-radius: 8px;">
+</div>
+<!-- Center logo hint -->
         <rect x="80" y="80" width="20" height="20" rx="3" fill="#e11d48"/>
-        <text x="90" y="94" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold" font-family="Arial">N</text>
+        <text x="90" y="94" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold" font-family="Arial">MADAPEDIA</text>
       </svg>
       <div class="qris-merchant">MADAPEDIA · GAME STORE</div>
     </div>
@@ -1966,7 +1892,7 @@ const games = [
     id: 'ff',
     name: 'Free Fire',
     type: 'Battle Royale',
-    emoji: '🔥',
+    emoji: '<img src="images/FF.jpeg" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">',
     color: '#f59e0b',
     badge: 'HOT',
     fields: [
@@ -1992,7 +1918,7 @@ const games = [
     id: 'mlbb',
     name: 'Mobile Legends',
     type: 'MOBA',
-    emoji: '⚔️',
+    emoji: '<img src="images/MLBB.jpeg" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">',
     color: '#3b82f6',
     badge: 'POPULAR',
     fields: [
@@ -2018,7 +1944,7 @@ const games = [
     id: 'pubg',
     name: 'PUBG Mobile',
     type: 'Battle Royale',
-    emoji: '🎮',
+    emoji: '<img src="images/PUBGM.jpeg" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">',
     color: '#f97316',
     fields: [
       { label: 'Player ID (UID)', placeholder: 'Masukkan UID PUBG', type: 'text', name: 'uid' },
@@ -2040,7 +1966,7 @@ const games = [
     id: 'genshin',
     name: 'Genshin Impact',
     type: 'RPG / Open World',
-    emoji: '🌟',
+    emoji: '<img src="images/GENSHIN.jpeg" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">',
     color: '#8b5cf6',
     fields: [
       { label: 'UID Genshin', placeholder: 'Masukkan UID', type: 'text', name: 'uid' },
@@ -2059,7 +1985,7 @@ const games = [
     id: 'honkai',
     name: 'Honkai Star Rail',
     type: 'RPG / Turn-based',
-    emoji: '🚀',
+    emoji: '<img src="images/HONKAI.jpeg" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">',
     color: '#06b6d4',
     fields: [
       { label: 'UID', placeholder: 'Masukkan UID Honkai', type: 'text', name: 'uid' },
@@ -2078,7 +2004,7 @@ const games = [
     id: 'valorant',
     name: 'Valorant',
     type: 'Tactical Shooter',
-    emoji: '🎯',
+    emoji: '<img src="images/VALO1.jpeg" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">',
     color: '#ef4444',
     fields: [
       { label: 'Riot ID', placeholder: 'Contoh: Player#1234', type: 'text', name: 'riotid' },
@@ -2099,7 +2025,7 @@ const games = [
     id: 'codm',
     name: 'COD Mobile',
     type: 'FPS / Battle Royale',
-    emoji: '💣',
+    emoji: '<img src="images/CODM.jpeg" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">',
     color: '#84cc16',
     fields: [
       { label: 'Player ID', placeholder: 'Masukkan Player ID', type: 'text', name: 'playerid' },
@@ -2119,7 +2045,7 @@ const games = [
     id: 'roblox',
     name: 'Roblox',
     type: 'Metaverse / Games',
-    emoji: '🟥',
+    emoji: '<img src="images/ROBLOX1.jpeg" style="width:100%; height:100%; object-fit:cover; border-radius:8px;">',
     color: '#e74c3c',
     fields: [
       { label: 'Username Roblox', placeholder: 'Masukkan username', type: 'text', name: 'username' }
@@ -2141,6 +2067,7 @@ let selectedPkg = null;
 let selectedPay = 'qris';
 let timerInterval = null;
 
+// ========== RENDER GAMES ==========
 // ========== RENDER GAMES ==========
 function renderGames() {
   const grid = document.getElementById('gameGrid');
