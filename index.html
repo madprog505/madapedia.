@@ -881,16 +881,294 @@
   footer {
     position: relative;
     z-index: 1;
-    text-align: center;
-    padding: 1.25rem;
-    color: var(--muted);
-    font-size: 0.85rem;
-    font-family: 'Inter', sans-serif;
+    background: var(--surface);
     border-top: 1px solid var(--border);
-    margin-top: 3rem;
+    padding: 3rem 2rem 1.5rem;
+    margin-top: 4rem;
+    font-family: 'Rajdhani', sans-serif;
   }
 
-  footer strong { color: var(--accent); font-family: 'Orbitron', monospace; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .footer-brand-logo {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.3rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.75rem;
+    letter-spacing: 2px;
+  }
+
+  .footer-brand-desc {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    font-family: 'Inter', sans-serif;
+    max-width: 240px;
+    margin-bottom: 1rem;
+  }
+
+  .footer-badges { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+  .footer-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 100px;
+    letter-spacing: 1px;
+  }
+
+  .footer-badge.cyan {
+    background: rgba(0,212,255,0.1);
+    border: 1px solid rgba(0,212,255,0.25);
+    color: var(--accent);
+  }
+
+  .footer-badge.green {
+    background: rgba(16,185,129,0.1);
+    border: 1px solid rgba(16,185,129,0.25);
+    color: var(--success);
+  }
+
+  .footer-col-title {
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-family: 'Orbitron', monospace;
+  }
+
+  .footer-nav-links { display: flex; flex-direction: column; gap: 0.6rem; }
+
+  .footer-nav-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.2s;
+    cursor: pointer;
+  }
+
+  .footer-nav-links a:hover { color: var(--accent); }
+
+  .footer-profile-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.25rem;
+  }
+
+  .footer-profile-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #fff;
+    flex-shrink: 0;
+    font-family: 'Orbitron', monospace;
+  }
+
+  .footer-profile-name { font-weight: 700; font-size: 0.95rem; color: var(--text); }
+  .footer-profile-role { font-size: 0.78rem; color: var(--muted); font-family: 'Inter', sans-serif; }
+
+  .footer-profile-email {
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-family: 'Inter', sans-serif;
+    border-top: 1px solid var(--border);
+    padding-top: 0.75rem;
+  }
+
+  .footer-profile-email a {
+    color: var(--accent2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+
+  .footer-profile-email a:hover { color: var(--accent); }
+
+  .footer-divider { height: 1px; background: var(--border); margin-bottom: 1.5rem; }
+
+  .footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .footer-copy {
+    color: #475569;
+    font-size: 0.82rem;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .footer-copy strong { color: #64748b; }
+
+  .footer-tech {
+    color: #334155;
+    font-size: 0.78rem;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* ========== ABOUT SECTION ========== */
+  .about-section {
+    position: relative;
+    z-index: 1;
+    padding: 4rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .about-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .about-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 1.75rem;
+    transition: all 0.3s;
+  }
+
+  .about-card:hover { transform: translateY(-4px); }
+  .about-card.cyan:hover { border-color: var(--accent); }
+  .about-card.purple:hover { border-color: var(--accent2); }
+  .about-card.amber:hover { border-color: var(--accent3); }
+
+  .about-card-icon { font-size: 2rem; margin-bottom: 1rem; }
+
+  .about-card-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .about-card.cyan .about-card-title { color: var(--accent); }
+  .about-card.purple .about-card-title { color: var(--accent2); }
+  .about-card.amber .about-card-title { color: var(--accent3); }
+
+  .about-card p {
+    color: #94a3b8;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .about-profile-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 2rem;
+    max-width: 560px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .about-profile-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0 auto 1rem;
+  }
+
+  .about-profile-name { font-weight: 700; font-size: 1.25rem; color: var(--text); margin-bottom: 0.25rem; }
+  .about-profile-role { color: var(--muted); font-size: 0.85rem; font-family: 'Inter', sans-serif; margin-bottom: 1.25rem; }
+
+  .about-skill-badges { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+
+  .about-skill-badge {
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 100px;
+  }
+
+  .about-skill-badge.cyan { background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.2); color: var(--accent); }
+  .about-skill-badge.purple { background: rgba(124,58,237,0.08); border: 1px solid rgba(124,58,237,0.2); color: var(--accent2); }
+  .about-skill-badge.amber { background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.2); color: var(--accent3); }
+
+  .about-email-box {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-email-box a {
+    color: var(--accent2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+
+  .about-email-box a:hover { color: var(--accent); }
+
+  .about-year-row {
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 0.82rem;
+    font-family: 'Inter', sans-serif;
+    color: #475569;
+  }
+
+  .about-year-row strong { color: #64748b; }
 
   /* ========== TOAST ========== */
   .toast {
@@ -1523,6 +1801,7 @@
     <a onclick="scrollToSection('games')">Games</a>
     <a onclick="scrollToSection('contact')">Kontak</a>
     <a onclick="scrollToSection('feedback')">Kritik & Saran</a>
+    <a onclick="document.getElementById('aboutSection').scrollIntoView({behavior:'smooth'})">Tentang Kami</a>
     <a href="https://instagram.com/" target="_blank">Instagram</a>
     <button class="admin-nav-btn" onclick="openAdminPanel()">⚙️ Admin</button>
   </div>
@@ -1536,6 +1815,7 @@
   <a onclick="mobileNav('games')">🎮 Games</a>
   <a onclick="mobileNav('contact')">📱 Kontak</a>
   <a onclick="mobileNav('feedback')">💬 Kritik & Saran</a>
+  <a onclick="closeMobileMenu(); document.getElementById('aboutSection').scrollIntoView({behavior:'smooth'})">📄 Tentang Kami</a>
   <a href="https://instagram.com/" target="_blank" onclick="closeMobileMenu()">📸 Instagram</a>
   <div class="mobile-menu-divider"></div>
   <button class="mobile-admin-btn" onclick="mobileOpenAdmin()">⚙️ Admin Panel</button>
@@ -1705,7 +1985,7 @@
   <div class="section-sub">Kontak & Sosial Media</div>
   <div class="contact-grid">
     <a class="contact-card" href="https://wa.me/6285830158059" target="_blank">
-      <div class="contact-icon wa">📱</div>
+    <img src="images/WA.jpeg" alt="icon wa" style="width: 60%; max-width: 55px; border-radius: 8px;">
       <div class="contact-info">
         <div class="label">WhatsApp</div>
         <div class="name">Customer Service</div>
@@ -1713,7 +1993,7 @@
       </div>
     </a>
     <a class="contact-card" href="https://instagram.com/syhdnahmada" target="_blank">
-      <div class="contact-icon ig">📸</div>
+    <img src="images/IG.jpg" alt="icon ig" style="width: 60%; max-width: 55px; border-radius: 8px;">
       <div class="contact-info">
         <div class="label">Instagram</div>
         <div class="name">Owner MadaPedia</div>
@@ -1790,9 +2070,116 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ========== TENTANG KAMI ========== -->
+<hr class="divider">
+<section class="about-section" id="aboutSection">
+
+  <div style="text-align: center; margin-bottom: 3rem;">
+    <p class="section-title">05 — Tentang Kami</p>
+    <p class="section-sub">Siapa MadaPedia?</p>
+    <p style="color: var(--muted); font-family: 'Inter', sans-serif; font-size: 0.95rem; max-width: 520px; margin: 0 auto; line-height: 1.7;">
+      MadaPedia adalah platform top-up game digital yang dirancang untuk memberikan pengalaman transaksi yang cepat, mudah, dan terpercaya bagi para gamer.
+    </p>
+  </div>
+
+  <div class="about-cards-grid">
+    <div class="about-card cyan">
+      <div class="about-card-icon">🎯</div>
+      <p class="about-card-title">Tujuan</p>
+      <p>MadaPedia hadir untuk mempermudah proses top-up berbagai game populer dengan sistem yang praktis, transparan, dan efisien.</p>
+    </div>
+    <div class="about-card purple">
+      <div class="about-card-icon">⚡</div>
+      <p class="about-card-title">Fitur</p>
+      <p>Menyediakan berbagai pilihan game populer, sistem pemesanan yang sederhana, dukungan pembayaran QRIS, manajemen harga yang fleksibel, serta tampilan responsif yang optimal di berbagai perangkat.</p>
+    </div>
+    <div class="about-card amber">
+      <div class="about-card-icon">🛠️</div>
+      <p class="about-card-title">Teknologi</p>
+      <p>Dikembangkan menggunakan teknologi web modern berbasis HTML, CSS, dan JavaScript untuk memastikan performa ringan, stabil, dan mudah diakses.</p>
+    </div>
+  </div>
+
+  <div class="about-profile-card">
+    <p class="about-profile-title">Developer</p>
+    <img src="images/LOGO2.png" alt="S" style="width: 70%; max-width: 65px; border-radius: 8px;">
+    <p class="about-profile-name">Syahdan Ahmada S</p>
+    <p class="about-profile-role">Frontend Development &bull; Frontend Development &bull; Web Engineering</p>
+    <div class="about-skill-badges">
+      <span class="about-skill-badge cyan">Verified</span>
+      <span class="about-skill-badge purple">Original</span>
+      <span class="about-skill-badge amber">NO AI</span>
+    </div>
+    <div class="about-email-box">
+      📧 <a href="mailto:syahdanahmada9@gmail.com">syahdanahmada9@gmail.com</a>
+    </div>
+    <div class="about-year-row">
+      <span>📅 Dirancang: <strong>2025</strong></span>
+      <span>🚀 Rilis: <strong>2026</strong></span>
+    </div>
+  </div>
+
+</section>
+
+<!-- ========== FOOTER ========== -->
 <footer>
-  <strong>MADAPEDIA</strong> &copy; 2026 · All rights reserved · Dibuat dengan ❤️ untuk para gamer Indonesia
+  <div class="footer-inner">
+
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div>
+        <div class="footer-brand-logo">MADAPEDIA</div>
+        <p class="footer-brand-desc">Platform top-up game digital yang dirancang untuk memberikan pengalaman transaksi yang cepat, aman, dan efisien.</p>
+        <div class="footer-badges">
+          <span class="footer-badge cyan">TOPUP GAMES</span>
+          <span class="footer-badge green">KOMERSIAL</span>
+        </div>
+      </div>
+
+      <!-- Navigasi -->
+      <div>
+        <p class="footer-col-title">Navigasi</p>
+        <div class="footer-nav-links">
+          <a onclick="document.getElementById('games').scrollIntoView({behavior:'smooth'})">🎮 Pilih Game</a>
+          <a onclick="document.querySelector('.trust-section').scrollIntoView({behavior:'smooth'})">⭐ Testimoni</a>
+          <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">📱 Kontak</a>
+          <a onclick="document.getElementById('feedback').scrollIntoView({behavior:'smooth'})">💬 Feedback</a>
+          <a onclick="document.getElementById('aboutSection').scrollIntoView({behavior:'smooth'})">📄 Tentang Kami</a>
+        </div>
+      </div>
+
+      <!-- Pembuat -->
+      <div>
+        <p class="footer-col-title">Pembuat</p>
+        <div class="footer-profile-card">
+          <div class="footer-profile-head">
+            <img src="images/LOGO2.png" alt="S" style="width: 60%; max-width: 55px; border-radius: 8px;">
+            <div>
+              <div class="footer-profile-name">Syahdan Ahmada S</div>
+              <div class="footer-profile-role">Developer &amp; Engineering</div>
+            </div>
+          </div>
+          <div class="footer-profile-email">
+            📧 <a href="mailto:syahdanahmada9@gmail.com">syahdanahmada9@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        &copy; Dirancang 2025 &mdash; Dipublikasikan 2026 &bull; <strong>MadaPedia</strong>. Dikembangkan oleh Ahmada (Founder MadaPedia).
+      </p>
+      <p class="footer-tech">
+        Dibuat dengan sepenuh hati &#10084; untuk setiap pengalaman di MadaPedia
+      </p>
+    </div>
+
+  </div>
 </footer>
 
 <!-- QRIS MODAL -->
